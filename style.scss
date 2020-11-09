@@ -1,7 +1,139 @@
+@import url("/base.scss");
+
 .container{
     height: 100vh;
-    width: auto;
+    width: 100vw;
     background-color: #4F73CD;
+    justify-content: center;
+    align-items: center;
 }
 
+.container__content {
+    
+}
+
+
+@media (max-width: 1440px) {
+    
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100vw;
+        height: 1200px;
+        display: flex;
+    }   
+    .container__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 20px;
+        height: 100%;
+        background-color: rgb(255, 231, 15);
+    }
+    
+    .title {
+        font-family: "Golos";
+        font-size: 30px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    
+    .city-description {
+        display: grid;
+        grid-template-columns: 334px;
+        grid-template-rows: repeat(2, 231px);
+    }
+    
+    .card-picture, .card-about {
+        border: 1px dashed black;
+        // border-radius: 20px;
+    }
+    .card-picture {
+        border-radius: 10px 10px 0 0;
+    }
+    .card-about {
+        border-radius: 0 0 10px 10px;
+        background-color: #254595;
+        padding: 20px;
+    }
+    
+    .city-descriprion__text {
+        font-family: "Golos";
+        font-weight: 400;
+        font-size: 16px;
+        color: #ffffff;
+    }
+    .card-about__button {
+        height: 50px;
+        width: 132px;
+        left: 40.7432861328125px;
+        top: 546px;
+        border-radius: 8px;
+        font-family: "Golos";
+        font-weight: 400;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #0047FE;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    
+    .container__cards {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 158px);
+        grid-template-rows: repeat(2, 230px);
+        grid-column-gap: 18px;
+        grid-row-gap: 18px;
+    }
+    .container__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+    }
+    
+    .card__country {
+        font-family: "Golos";
+        font-family: 400;
+        font-size: 16px;
+        color:#ffffff;
+    }
+    .city {
+        font-family: "Golos";
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        width: 100vw;
+        display: flex;
+    }   
+    .container__content {
+        display: flex;
+        
+        width: 98%;
+        margin: 0 20px;
+        height: 90%;
+        background-color: rgb(255, 231, 15);
+    }
+    .container__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(max(130px, 30%), 158px));
+        grid-template-rows: repeat(2, 230px);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+    .container__card {
+        border: 1px dashed black;
+        border-radius: 10px;
+    }
+}
 

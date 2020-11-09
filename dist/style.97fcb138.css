@@ -12,12 +12,12 @@ html {
 
 @font-face {
   font-family: "Golos";
-  src: url("/Golos Text_Bold.7b9cb5fe.ttf");
+  src: url("/Golos_Bold.ed8541c6.ttf");
   font-weight: 600;
 }
 @font-face {
   font-family: "Golos";
-  src: url("/Golos Text_Regular.36bf4685.ttf");
+  src: url("/Golos_Regular.2318c80d.ttf");
   font-weight: 400;
 }
 .container {
@@ -59,10 +59,6 @@ html {
     grid-template-rows: repeat(2, 231px);
   }
 
-  .card-picture, .card-about {
-    border: 1px dashed black;
-  }
-
   .card-picture {
     border-radius: 10px 10px 0 0;
   }
@@ -73,7 +69,7 @@ html {
     padding: 20px;
   }
 
-  .city-descriprion__text {
+  .city-description__text {
     font-family: "Golos";
     font-weight: 400;
     font-size: 16px;
@@ -83,7 +79,7 @@ html {
   .card-about__button {
     height: 50px;
     width: 132px;
-    left: 40.7432861328px;
+    left: 41;
     top: 546px;
     border-radius: 8px;
     font-family: "Golos";
@@ -91,7 +87,6 @@ html {
     font-size: 16px;
     color: #ffffff;
     background-color: #0047FE;
-    border-radius: 8px;
     margin-top: 20px;
   }
 
@@ -149,7 +144,6 @@ html {
   }
 
   .container__card {
-    border: 1px dashed black;
     border-radius: 10px;
   }
 }

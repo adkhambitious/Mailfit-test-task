@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Bold.ttf":[["Golos_Bold.ed8541c6.ttf","fonts/Golos_Bold.ttf"],"fonts/Golos_Bold.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Regular.ttf":[["Golos_Regular.2318c80d.ttf","fonts/Golos_Regular.ttf"],"fonts/Golos_Regular.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\images\\fraiburg-desc.png":[["fraiburg-desc.45c69acf.png","images/fraiburg-desc.png"],"images/fraiburg-desc.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Bold.ttf":[["Golos_Bold.ed8541c6.ttf","fonts/Golos_Bold.ttf"],"fonts/Golos_Bold.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Regular.ttf":[["Golos_Regular.2318c80d.ttf","fonts/Golos_Regular.ttf"],"fonts/Golos_Regular.ttf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50336" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53518" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -42,8 +42,7 @@
     width: 334px;
     height: 241px;
     border-radius: 10px 10px 0 0;
-    background: url('/images/fraiburg-desc.png');
-    background-size: cover;
+    object-fit: cover;
 }
 
 .card-about {
@@ -147,11 +146,27 @@
 .city {
     font-family: "Golos";
     font-weight: 600;
+}
+
+.disposition_absolute {
+    font-family: "Golos";
+    font-family: 400;
+    font-size: 16px;
+    color:#ffffff;
     z-index: 3;
+    left: 12px;
+    bottom: 258px;
+    position: absolute;
+}
+
+.current__city {
+    font-family: "Golos";
+    font-weight: 600;
+    bottom: 279px;
 }
 
 @media (min-width: 768px) {
-
+    
     .title {
         font-size: 36px;
     }
@@ -204,6 +219,14 @@
         font-family: "Golos";
         font-weight: 600;
     }
+    
+    .disposition_absolute {
+        bottom: 17px;
+    }
+    
+    .current__city {
+        bottom: 38px;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -225,6 +248,7 @@
         border-radius: 10px 0 0 10px;
         height: 250px;
         width: 170px;
+        object-fit: none;
     }
     
     .card-about {

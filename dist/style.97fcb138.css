@@ -20,6 +20,11 @@ html {
   src: url("/Golos_Regular.2318c80d.ttf");
   font-weight: 400;
 }
+@font-face {
+  font-family: "Golos";
+  src: url("/Golos Text_Medium.dfee4bb6.ttf");
+  font-weight: 500;
+}
 .container {
   display: flex;
   background-color: #4F73CD;
@@ -44,6 +49,90 @@ html {
   font-size: 30px;
   font-weight: 600;
   color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 334px;
+  height: auto;
+  background-color: transparent;
+  position: relative;
+  color: #ffffff;
+}
+
+.dropdown__name {
+  display: flex;
+  align-items: center;
+  font-family: "Golos";
+  font-weight: 500;
+  font-size: 16px;
+  height: 39px;
+  position: relative;
+}
+
+.dropdown__name::after {
+  content: "";
+  top: 50%;
+  right: 15px;
+}
+
+.dropdown__list {
+  display: none;
+  width: 100%;
+  height: auto;
+  left: 0px;
+  border-top: none;
+  background: #254595;
+  user-select: none;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 30px;
+}
+
+.arrow-icon {
+  display: none;
+  right: 0;
+  position: absolute;
+  margin: 10px;
+}
+
+.arrow-icon_clicked {
+  display: block;
+}
+
+.dropdown__list_clicked {
+  display: block;
+  transition: all 0.6s ease 0s;
+}
+
+.dropdown__item {
+  display: flex;
+  list-style: none;
+  font-family: "Golos";
+  font-weight: 500;
+  font-size: 16px;
+  height: 39px;
+  color: #ffffff;
+  align-items: center;
+  padding-left: 41px;
+}
+
+.dropdown__item_clicked {
+  background-color: #3259B9;
+}
+
+.dropdown__item_clicked .tick {
+  display: flex;
+}
+
+.tick {
+  position: absolute;
+  width: 25px;
+  height: 100%;
+  margin: 0 8px 0 8px;
+  left: 0;
+  display: none;
 }
 
 .full-card {
@@ -127,7 +216,7 @@ html {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, 158px);
-  grid-template-rows: repeat(6, 230px);
+  grid-template-rows: repeat(8, 230px);
   grid-column-gap: 18px;
   grid-row-gap: 18px;
   position: relative;
@@ -248,6 +337,41 @@ html {
   .current__city {
     bottom: 38px;
   }
+
+  .dropdown {
+    display: flex;
+    width: 689px;
+  }
+
+  .dropdown__name {
+    display: none;
+  }
+
+  .dropdown__list {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .arrow-icon, .arrow-icon_clicked {
+    display: none;
+  }
+
+  .dropdown__item {
+    justify-content: center;
+    padding: 0;
+    width: 131px;
+    border-radius: 10px;
+  }
+
+  .dropdown__item_clicked {
+    background: #80A0F2;
+  }
+
+  .dropdown__item_clicked .tick {
+    display: none;
+  }
 }
 @media (min-width: 1440px) {
   .container__content {
@@ -339,6 +463,14 @@ html {
   .full-card_order_reverse .icon {
     right: auto;
     left: 20px;
+  }
+
+  .dropdown {
+    width: 1170px;
+  }
+
+  .dropdown__list {
+    width: 100%;
   }
 }
 

@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"utilities.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Bold.ttf":[["Golos_Bold.ed8541c6.ttf","fonts/Golos_Bold.ttf"],"fonts/Golos_Bold.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Regular.ttf":[["Golos_Regular.2318c80d.ttf","fonts/Golos_Regular.ttf"],"fonts/Golos_Regular.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos Text_Medium.ttf":[["Golos Text_Medium.dfee4bb6.ttf","fonts/Golos Text_Medium.ttf"],"fonts/Golos Text_Medium.ttf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -394,4 +394,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.97fcb138.js.map
+//# sourceMappingURL=/utilities.37aca67c.js.map

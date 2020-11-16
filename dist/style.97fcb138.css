@@ -25,6 +25,10 @@ html {
   src: url("/Golos Text_Medium.dfee4bb6.ttf");
   font-weight: 500;
 }
+.card-container_hidden {
+  display: none;
+}
+
 .container {
   display: flex;
   background-color: #4F73CD;
@@ -116,6 +120,7 @@ html {
   color: #ffffff;
   align-items: center;
   padding-left: 41px;
+  cursor: pointer;
 }
 
 .dropdown__item_clicked {
@@ -146,7 +151,7 @@ html {
   left: 0;
 }
 
-.card-picture {
+.full-card__picture {
   display: flex;
   width: 334px;
   height: 241px;
@@ -274,6 +279,10 @@ html {
   bottom: 279px;
 }
 
+.dropdown__item:hover {
+  background-color: #3259B9;
+}
+
 @media (min-width: 768px) {
   .title {
     font-size: 36px;
@@ -286,7 +295,7 @@ html {
     top: auto;
   }
 
-  .card-picture {
+  .full-card__picture {
     width: 216px;
     height: 317px;
     border-radius: 10px 0 0 10px;
@@ -365,6 +374,10 @@ html {
     border-radius: 10px;
   }
 
+  .dropdown__item:hover {
+    background-color: #80A0F2;
+  }
+
   .dropdown__item_clicked {
     background: #80A0F2;
   }
@@ -387,11 +400,12 @@ html {
     height: 250px;
   }
 
-  .card-picture {
+  .full-card__picture {
     border-radius: 10px 0 0 10px;
     height: 250px;
     width: 170px;
-    object-fit: none;
+    object-fit: cover;
+    object-position: 0;
   }
 
   .card-about {
@@ -442,7 +456,6 @@ html {
   }
 
   .card-container {
-    display: flex;
     position: relative;
   }
 
@@ -456,7 +469,7 @@ html {
     border-radius: 10px 0 0 10px;
   }
 
-  .full-card_order_reverse .card-picture {
+  .full-card_order_reverse .full-card__picture {
     border-radius: 0 10px 10px 0;
   }
 
@@ -471,6 +484,10 @@ html {
 
   .dropdown__list {
     width: 100%;
+  }
+
+  .dropdown__item:hover {
+    background-color: #80A0F2;
   }
 }
 

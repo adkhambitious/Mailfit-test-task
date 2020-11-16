@@ -1,4 +1,5 @@
 @import "/base.scss";
+@import "/utilities.scss";
 
 .container{
     display: flex;
@@ -91,6 +92,7 @@
     color: #ffffff;
     align-items: center;
     padding-left: 41px;
+    cursor: pointer;
 }
 
 .dropdown__item_clicked {
@@ -122,7 +124,7 @@
     left: 0;
 }
 
-.card-picture {
+.full-card__picture {
     display: flex;
     width: 334px;
     height: 241px;
@@ -250,6 +252,10 @@
     bottom: 279px;
 }
 
+.dropdown__item:hover {
+    background-color: #3259B9;
+}
+
 @media (min-width: 768px) {
     
     .title {
@@ -262,7 +268,7 @@
         flex-direction: row;
         top: auto;
     }
-    .card-picture {
+    .full-card__picture {
         width: 216px;
         height: 317px;
         border-radius: 10px 0 0 10px;
@@ -341,6 +347,10 @@
         border-radius: 10px;
     }
     
+    .dropdown__item:hover {
+        background-color: #80A0F2;
+    }
+    
     .dropdown__item_clicked {
         background: #80A0F2;
     }
@@ -365,11 +375,12 @@
         height: 250px;
     }
     
-    .card-picture {
+    .full-card__picture {
         border-radius: 10px 0 0 10px;
         height: 250px;
         width: 170px;
-        object-fit: none;
+        object-fit: cover;
+        object-position: 0;
     }
     
     .card-about {
@@ -418,7 +429,6 @@
     }
     
     .card-container {
-        display: flex;
         position: relative;
     }
     
@@ -432,7 +442,7 @@
         border-radius: 10px 0 0 10px;
     }
     
-    .full-card_order_reverse .card-picture {
+    .full-card_order_reverse .full-card__picture {
         border-radius: 0 10px 10px 0;
     }
     
@@ -446,5 +456,8 @@
     
     .dropdown__list {
         width: 100%;
+    }
+    .dropdown__item:hover {
+        background-color: #80A0F2;
     }
 }

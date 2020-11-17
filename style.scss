@@ -9,6 +9,7 @@
 
 .card-container {
     display: flex;
+    cursor: pointer;
 }
 
 .container__content {
@@ -119,7 +120,7 @@
 
 
 .full-card {
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 482px;
     width: 334px;

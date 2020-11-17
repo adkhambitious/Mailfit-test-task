@@ -29,6 +29,10 @@ html {
   display: none;
 }
 
+.full-card__clicked {
+  display: flex;
+}
+
 .container {
   display: flex;
   background-color: #4F73CD;
@@ -37,6 +41,7 @@ html {
 
 .card-container {
   display: flex;
+  cursor: pointer;
 }
 
 .container__content {
@@ -146,7 +151,7 @@ html {
 }
 
 .full-card {
-  display: flex;
+  display: none;
   flex-direction: column;
   height: 482px;
   width: 334px;

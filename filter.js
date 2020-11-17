@@ -8,7 +8,8 @@ filterButtons.forEach(filterButton => {
     
     filterButton.addEventListener("click", event => {
         filterResetButton.classList.remove('dropdown__item_clicked');
-        let filterDataAttr = event.target.dataset['city'];
+        let filterDataAttr = event.target.dataset.city;
+        console.log(filterDataAttr);
         severalCountries.push(filterDataAttr);
         filterButton.classList.add('dropdown__item_clicked');
         
@@ -48,10 +49,4 @@ const dropdownOpen = document.querySelector('.dropdown');
 
 dropdownButtonForMobile.addEventListener("click", event => {
         dropdownOpen.classList.toggle('dropdown_open');
-})
-
-
-
-
-
-
+});

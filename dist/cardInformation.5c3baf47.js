@@ -117,79 +117,116 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"cardInformation.js":[function(require,module,exports) {
+var data = [{
+  englishVersion: "milan",
+  city: "Милан",
+  country: "Италия",
+  picture: "/images/milan.png",
+  information: "Милан –<br>крупный город на севере Италии, расположенный в Ломбардии, мировая столица дизайна и моды."
+}, {
+  englishVersion: "venice",
+  city: "Венеция",
+  country: "Италия",
+  picture: "/images/venice.png",
+  information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря."
+}, {
+  englishVersion: "berlin",
+  city: "Берлин",
+  country: "Германия",
+  picture: "/images/berlin.png",
+  information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены"
+}, {
+  englishVersion: "fraiburg",
+  city: "Фрайбург",
+  country: "Германия",
+  picture: "/images/fraiburg-desc.png",
+  information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом."
+}, {
+  englishVersion: "athens",
+  city: "Афины",
+  country: "Греция",
+  picture: "/images/athens.png",
+  information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности."
+}, {
+  englishVersion: "madrid",
+  city: "Мадрид",
+  country: "Испания",
+  picture: "/images/madrid.png",
+  information: "Мадрид – столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро."
+}, {
+  englishVersion: "barcelona",
+  city: "Барселона",
+  country: "Испания",
+  picture: "/images/barcelona.png",
+  information: "Барселона – столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством."
+}, {
+  englishVersion: "portu",
+  city: "Порту",
+  country: "Португалия",
+  picture: "/images/portu.png",
+  information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета."
+}, {
+  englishVersion: "lissbon",
+  city: "Лиссабон",
+  country: "Португалия",
+  picture: "/images/lissbon.png",
+  information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана."
+}, {
+  englishVersion: "vicenze",
+  city: "Виченца",
+  country: "Италия",
+  picture: "images/vicenze.png",
+  information: "Виче́нца — город в итальянской области Венеция, административный центр одноимённой провинции."
+}, {
+  englishVersion: "kash",
+  city: "Каш",
+  country: "Турция",
+  picture: "/images/kash.png",
+  information: "Каш — город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья."
+}, {
+  englishVersion: "antaliya",
+  city: "Анталия",
+  country: "Турция",
+  picture: "/images/antaliya.png",
+  information: "Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями."
+}];
+var currentCity = document.querySelector(".current__city"); // Город
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+var currentCountry = document.querySelector(".current__country"); // Страна
 
-  return bundleURL;
-}
+var fullCardText = document.querySelector(".full-card__text"); // Инфромация о стране
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+var fullCardPicture = document.querySelector(".full-card__picture"); // Картинка карточки
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
+var cardImage = document.querySelector(".image");
+var countryCards = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
 
-  return '/';
-}
+var fullCard = document.querySelector(".full-card"); // Целая карточка для того, чтобы она могла исчезать
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
+countryCards.forEach(function (countryCard) {
+  countryCard.addEventListener("click", function (event) {
+    var cityInformation = event.currentTarget.dataset.infoAbtCity;
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+    for (var i = 0; i < data.length; i += 1) {
+      if (data[i].englishVersion === cityInformation) {
+        currentCity.innerHTML = data[i].city;
+        currentCountry.innerHTML = data[i].country;
+        fullCardText.innerHTML = data[i].information;
+        fullCardPicture.src = countryCard.querySelector('img').src;
       }
     }
 
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Bold.ttf":[["Golos_Bold.ed8541c6.ttf","fonts/Golos_Bold.ttf"],"fonts/Golos_Bold.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Regular.ttf":[["Golos_Regular.2318c80d.ttf","fonts/Golos_Regular.ttf"],"fonts/Golos_Regular.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos Text_Medium.ttf":[["Golos Text_Medium.dfee4bb6.ttf","fonts/Golos Text_Medium.ttf"],"fonts/Golos Text_Medium.ttf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    fullCard.classList.add("full-card__clicked");
+    console.log("2 раза проскочил");
+  });
+});
+var icon = document.querySelector(".card-about__button");
+icon.addEventListener("click", function (event) {
+  console.log(event.currentTarget);
+  fullCard.classList.remove("full-card__clicked");
+});
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +430,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.97fcb138.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","cardInformation.js"], null)
+//# sourceMappingURL=/cardInformation.5c3baf47.js.map

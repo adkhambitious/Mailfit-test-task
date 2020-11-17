@@ -2,4 +2,8 @@
   display: none;
 }
 
+.full-card__clicked {
+  display: flex;
+}
+
 /*# sourceMappingURL=/utilities.37aca67c.css.map */

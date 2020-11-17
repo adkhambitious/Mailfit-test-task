@@ -117,79 +117,44 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"filter.js":[function(require,module,exports) {
+var filterButtons = document.querySelectorAll(".js-country");
+var countryCards = document.querySelectorAll(".js-card-container");
+var filterResetButton = document.querySelector(".js-country-reset");
+var severalCountries = [];
+filterButtons.forEach(function (filterButton) {
+  filterButton.addEventListener("click", function (event) {
+    filterResetButton.classList.remove('dropdown__item_clicked');
+    var filterDataAttr = event.target.dataset['city'];
+    severalCountries.push(filterDataAttr);
+    filterButton.classList.add('dropdown__item_clicked');
+    countryCards.forEach(function (countryCard) {
+      var country = countryCard.dataset.cityCard;
+      countryCard.classList.remove('card-container_hidden');
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+      if (filterDataAttr !== country && !severalCountries.includes(country)) {
+        countryCard.classList.add('card-container_hidden');
       }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Bold.ttf":[["Golos_Bold.ed8541c6.ttf","fonts/Golos_Bold.ttf"],"fonts/Golos_Bold.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos_Regular.ttf":[["Golos_Regular.2318c80d.ttf","fonts/Golos_Regular.ttf"],"fonts/Golos_Regular.ttf"],"D:\\University\\University\\FRONT\\PROJECTS\\Mailfit-test-task\\fonts\\Golos Text_Medium.ttf":[["Golos Text_Medium.dfee4bb6.ttf","fonts/Golos Text_Medium.ttf"],"fonts/Golos Text_Medium.ttf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    });
+  });
+});
+filterResetButton.addEventListener("click", function (event) {
+  filterResetButton.classList.add('dropdown__item_clicked');
+  countryCards.forEach(function (countryCard) {
+    countryCard.classList.remove('card-container_hidden');
+  });
+  filterButtons.forEach(function (filterButton) {
+    filterButton.classList.remove('dropdown__item_clicked');
+  });
+  severalCountries.length = 0;
+});
+var dropdownButtonForMobile = document.querySelector(".js-dropdown-name");
+var dropdownList = document.querySelector('.js-dropdown-list');
+var dropdownOpen = document.querySelector('.dropdown');
+dropdownButtonForMobile.addEventListener("click", function (event) {
+  dropdownOpen.classList.toggle('dropdown_open');
+});
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +358,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.97fcb138.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","filter.js"], null)
+//# sourceMappingURL=/filter.5d00c38f.js.map

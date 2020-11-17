@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Golos";
+    src: url("/fonts/Golos_Bold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Golos";
+    src: url("/fonts/Golos_Regular.ttf");
+    font-weight: 400;
+}

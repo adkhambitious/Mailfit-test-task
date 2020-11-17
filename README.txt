@@ -1,4 +1,4 @@
-#Mailfit travel guide
+Mailfit travel guide
+travel with Mailfit
 
-##travel with Mailfit
 Hi to everyone!

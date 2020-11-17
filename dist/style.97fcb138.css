@@ -74,6 +74,7 @@ html {
   font-size: 16px;
   height: 39px;
   position: relative;
+  cursor: pointer;
 }
 
 .dropdown__name::after {
@@ -95,7 +96,7 @@ html {
 }
 
 .arrow-icon {
-  display: none;
+  display: block;
   right: 0;
   position: absolute;
   margin: 10px;
@@ -105,9 +106,13 @@ html {
   display: block;
 }
 
-.dropdown__list_clicked {
+.dropdown_open .dropdown__list {
   display: block;
   transition: all 0.6s ease 0s;
+}
+
+.dropdown_open .arrow-icon {
+  transform: rotate(180deg);
 }
 
 .dropdown__item {

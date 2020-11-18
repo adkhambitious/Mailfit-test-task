@@ -117,80 +117,89 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"cardInformation.js":[function(require,module,exports) {
-var data = [{
-  englishVersion: "milan",
-  city: "Милан",
-  country: "Италия",
-  picture: "/images/milan.png",
-  information: "Милан –<br>крупный город на севере Италии, расположенный в Ломбардии, мировая столица дизайна и моды."
-}, {
-  englishVersion: "venice",
-  city: "Венеция",
-  country: "Италия",
-  picture: "/images/venice.png",
-  information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря."
-}, {
-  englishVersion: "berlin",
-  city: "Берлин",
-  country: "Германия",
-  picture: "/images/berlin.png",
-  information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены"
-}, {
-  englishVersion: "fraiburg",
-  city: "Фрайбург",
-  country: "Германия",
-  picture: "/images/fraiburg-desc.png",
-  information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом."
-}, {
-  englishVersion: "athens",
-  city: "Афины",
-  country: "Греция",
-  picture: "/images/athens.png",
-  information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности."
-}, {
-  englishVersion: "madrid",
-  city: "Мадрид",
-  country: "Испания",
-  picture: "/images/madrid.png",
-  information: "Мадрид – столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро."
-}, {
-  englishVersion: "barcelona",
-  city: "Барселона",
-  country: "Испания",
-  picture: "/images/barcelona.png",
-  information: "Барселона – столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством."
-}, {
-  englishVersion: "portu",
-  city: "Порту",
-  country: "Португалия",
-  picture: "/images/portu.png",
-  information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета."
-}, {
-  englishVersion: "lissbon",
-  city: "Лиссабон",
-  country: "Португалия",
-  picture: "/images/lissbon.png",
-  information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана."
-}, {
-  englishVersion: "vicenze",
-  city: "Виченца",
-  country: "Италия",
-  picture: "images/vicenze.png",
-  information: "Виче́нца — город в итальянской области Венеция, административный центр одноимённой провинции."
-}, {
-  englishVersion: "kash",
-  city: "Каш",
-  country: "Турция",
-  picture: "/images/kash.png",
-  information: "Каш — город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья."
-}, {
-  englishVersion: "antaliya",
-  city: "Анталия",
-  country: "Турция",
-  picture: "/images/antaliya.png",
-  information: "Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями."
-}];
+})({"icons/close.svg":[function(require,module,exports) {
+module.exports = "/close.1a8adba6.svg";
+},{}],"cardInformation.js":[function(require,module,exports) {
+"use strict";
+
+var _close = _interopRequireDefault(require("./icons/close.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var travels = {
+  milan: {
+    city: "Милан",
+    country: "Италия",
+    information: "Милан –<br>крупный город на севере Италии, расположенный в Ломбардии, мировая столица дизайна и моды."
+  },
+  venice: {
+    city: "Венеция",
+    country: "Италия",
+    information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря."
+  },
+  berlin: {
+    city: "Берлин",
+    country: "Германия",
+    information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены"
+  },
+  fraiburg: {
+    city: "Фрайбург",
+    country: "Германия",
+    information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом."
+  },
+  athens: {
+    city: "Афины",
+    country: "Греция",
+    information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности."
+  },
+  madrid: {
+    city: "Мадрид",
+    country: "Испания",
+    information: "Мадрид – столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро."
+  },
+  barcelona: {
+    city: "Барселона",
+    country: "Испания",
+    information: "Барселона – столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством."
+  },
+  portu: {
+    city: "Порту",
+    country: "Португалия",
+    information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета."
+  },
+  lissbon: {
+    city: "Лиссабон",
+    country: "Португалия",
+    information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана."
+  },
+  vicenze: {
+    city: "Виченца",
+    country: "Италия",
+    information: "Виче́нца — город в итальянской области Венеция, административный центр одноимённой провинции."
+  },
+  kash: {
+    city: "Каш",
+    country: "Турция",
+    information: "Каш — город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья."
+  },
+  antaliya: {
+    city: "Анталия",
+    country: "Турция",
+    information: "Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями."
+  }
+};
+
+var createNewElement = function createNewElement(htmlString) {
+  var tempElement = document.createElement('div');
+  tempElement.innerHTML = htmlString;
+  return tempElement.firstElementChild;
+};
+
+var createFullCard = function createFullCard(cityName, countryName, description, imagePath) {
+  var isReverse = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+  return createNewElement("\n    <div class=\"full-card ".concat(isReverse ? "full-card_order_reverse" : '', " js-full-card\">\n        <img class=\"full-card__picture\" src=\"").concat(imagePath, "\" alt=\"The city you chose\">\n        <p class=\"current__city disposition_absolute\">").concat(cityName, "</p>\n        <p class=\"current__country disposition_absolute\">").concat(countryName, "</p>\n        <div class=\"card-about\">\n            <p class=\"full-card__text\">\n                ").concat(description, "\n            </p>\n            <a class=\"card-about__button\" href=\"#\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            <button class=\"icon\"><img class=\"icon__img\" src=\"").concat(_close.default, "\"></button>\n        </div>\n    </div>\n"));
+};
+
 var currentCity = document.querySelector(".current__city"); // Город
 
 var currentCountry = document.querySelector(".current__country"); // Страна
@@ -206,27 +215,18 @@ var fullCard = document.querySelector(".full-card"); // Целая карточ�
 
 countryCards.forEach(function (countryCard) {
   countryCard.addEventListener("click", function (event) {
-    var cityInformation = event.currentTarget.dataset.infoAbtCity;
-
-    for (var i = 0; i < data.length; i += 1) {
-      if (data[i].englishVersion === cityInformation) {
-        currentCity.innerHTML = data[i].city;
-        currentCountry.innerHTML = data[i].country;
-        fullCardText.innerHTML = data[i].information;
-        fullCardPicture.src = countryCard.querySelector('img').src;
-      }
-    }
-
-    fullCard.classList.add("full-card__clicked");
-    console.log("2 раза проскочил");
+    var cityInformation = countryCard.dataset.infoAbtCity;
+    var countryData = travels[cityInformation];
+    var imagePath = countryCard.querySelector('img').src;
+    var fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath);
+    countryCard.append(fullCountryCard);
   });
-});
-var icon = document.querySelector(".card-about__button");
-icon.addEventListener("click", function (event) {
-  console.log(event.currentTarget);
-  fullCard.classList.remove("full-card__clicked");
-});
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}); // const icon = document.querySelector(".icon");
+// icon.addEventListener("click", event => {
+//     console.log(event.currentTarget);
+//     fullCard.classList.remove("full-card__clicked");
+// });
+},{"./icons/close.svg":"icons/close.svg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -254,7 +254,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64309" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57814" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

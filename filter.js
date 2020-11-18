@@ -9,7 +9,7 @@ filterButtons.forEach(filterButton => {
     filterButton.addEventListener("click", event => {
         filterResetButton.classList.remove('dropdown__item_clicked');
         let filterDataAttr = event.target.dataset.city;
-        console.log(filterDataAttr);
+
         severalCountries.push(filterDataAttr);
         filterButton.classList.add('dropdown__item_clicked');
         

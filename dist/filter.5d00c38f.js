@@ -126,7 +126,6 @@ filterButtons.forEach(function (filterButton) {
   filterButton.addEventListener("click", function (event) {
     filterResetButton.classList.remove('dropdown__item_clicked');
     var filterDataAttr = event.target.dataset.city;
-    console.log(filterDataAttr);
     severalCountries.push(filterDataAttr);
     filterButton.classList.add('dropdown__item_clicked');
     countryCards.forEach(function (countryCard) {
@@ -183,7 +182,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60310" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58573" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -89,26 +89,33 @@ const createFullCard = (cityName, countryName, description, imagePath, isReverse
 const currentCity = document.querySelector(".current__city"); // Город
 const currentCountry = document.querySelector(".current__country"); // Страна
 const fullCardText = document.querySelector(".full-card__text"); // Инфромация о стране
-const fullCardPicture = document.querySelector(".full-card__picture") // Картинка карточки
+const fullCardPicture = document.querySelector(".full-card__picture"); // Картинка карточки
 const cardImage = document.querySelector(".image");
-const first = document.querySelector(".first");
 
-const countryCards = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
+const countryCardContainers = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
+const deleteLastFullCard = [];
+let previousFullCard;
 
-
-countryCards.forEach((countryCard) => {
-    countryCard.querySelector('.js-card').addEventListener("click", event => {
-        let cityInformation = countryCard.dataset.infoAbtCity;
+countryCardContainers.forEach((countryCardContainer) => {
+    
+    countryCardContainer.querySelector('.js-card').addEventListener("click", event => {
+        if(previousFullCard !== undefined) {
+            previousFullCard.remove();
+        }
+        previousFullCard = countryCardContainer;
+        
+        let cityInformation = countryCardContainer.dataset.infoAbtCity;
         const countryData = travels[cityInformation];
-        const imagePath = countryCard.querySelector('img').src;
+        const imagePath = countryCardContainer.querySelector('img').src;
         const fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath);
-        first.append(fullCountryCard);     
+        countryCardContainer.append(fullCountryCard);
+        previousFullCard = fullCountryCard;
         
-        const icon = fullCountryCard.querySelector(".icon");  
+        
+        const icon = fullCountryCard.querySelector(".icon");
         icon.addEventListener("click", event => {
-            first.removeChild(fullCountryCard);
-        })    
-        
+            countryCardContainer.removeChild(fullCountryCard);
+        })
     })
 });
 

@@ -209,19 +209,26 @@ var fullCardText = document.querySelector(".full-card__text"); // Инфрома
 var fullCardPicture = document.querySelector(".full-card__picture"); // Картинка карточки
 
 var cardImage = document.querySelector(".image");
-var first = document.querySelector(".first");
-var countryCards = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
+var countryCardContainers = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
 
-countryCards.forEach(function (countryCard) {
-  countryCard.querySelector('.js-card').addEventListener("click", function (event) {
-    var cityInformation = countryCard.dataset.infoAbtCity;
+var deleteLastFullCard = [];
+var previousFullCard;
+countryCardContainers.forEach(function (countryCardContainer) {
+  countryCardContainer.querySelector('.js-card').addEventListener("click", function (event) {
+    if (previousFullCard !== undefined) {
+      previousFullCard.remove();
+    }
+
+    previousFullCard = countryCardContainer;
+    var cityInformation = countryCardContainer.dataset.infoAbtCity;
     var countryData = travels[cityInformation];
-    var imagePath = countryCard.querySelector('img').src;
+    var imagePath = countryCardContainer.querySelector('img').src;
     var fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath);
-    first.append(fullCountryCard);
+    countryCardContainer.append(fullCountryCard);
+    previousFullCard = fullCountryCard;
     var icon = fullCountryCard.querySelector(".icon");
     icon.addEventListener("click", function (event) {
-      first.removeChild(fullCountryCard);
+      countryCardContainer.removeChild(fullCountryCard);
     });
   });
 });
@@ -253,7 +260,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60310" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58573" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -91,27 +91,28 @@ const currentCountry = document.querySelector(".current__country"); // Стра�
 const fullCardText = document.querySelector(".full-card__text"); // Инфромация о стране
 const fullCardPicture = document.querySelector(".full-card__picture") // Картинка карточки
 const cardImage = document.querySelector(".image");
+const first = document.querySelector(".first");
 
 const countryCards = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
-let fullCard = document.querySelector(".full-card"); // Целая карточка для того, чтобы она могла исчезать
 
 
 countryCards.forEach((countryCard) => {
-    countryCard.addEventListener("click", event => {
+    countryCard.querySelector('.js-card').addEventListener("click", event => {
         let cityInformation = countryCard.dataset.infoAbtCity;
         const countryData = travels[cityInformation];
         const imagePath = countryCard.querySelector('img').src;
         const fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath);
-        countryCard.append(fullCountryCard);
-    });
-})
+        first.append(fullCountryCard);     
+        
+        const icon = fullCountryCard.querySelector(".icon");  
+        icon.addEventListener("click", event => {
+            first.removeChild(fullCountryCard);
+        })    
+        
+    })
+});
 
-// const icon = document.querySelector(".icon");
 
-// icon.addEventListener("click", event => {
-//     console.log(event.currentTarget);
-//     fullCard.classList.remove("full-card__clicked");
-// });
 
 
 

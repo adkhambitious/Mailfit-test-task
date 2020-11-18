@@ -209,23 +209,22 @@ var fullCardText = document.querySelector(".full-card__text"); // Инфрома
 var fullCardPicture = document.querySelector(".full-card__picture"); // Картинка карточки
 
 var cardImage = document.querySelector(".image");
+var first = document.querySelector(".first");
 var countryCards = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
 
-var fullCard = document.querySelector(".full-card"); // Целая карточка для того, чтобы она могла исчезать
-
 countryCards.forEach(function (countryCard) {
-  countryCard.addEventListener("click", function (event) {
+  countryCard.querySelector('.js-card').addEventListener("click", function (event) {
     var cityInformation = countryCard.dataset.infoAbtCity;
     var countryData = travels[cityInformation];
     var imagePath = countryCard.querySelector('img').src;
     var fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath);
-    countryCard.append(fullCountryCard);
+    first.append(fullCountryCard);
+    var icon = fullCountryCard.querySelector(".icon");
+    icon.addEventListener("click", function (event) {
+      first.removeChild(fullCountryCard);
+    });
   });
-}); // const icon = document.querySelector(".icon");
-// icon.addEventListener("click", event => {
-//     console.log(event.currentTarget);
-//     fullCard.classList.remove("full-card__clicked");
-// });
+});
 },{"./icons/close.svg":"icons/close.svg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -254,7 +253,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57814" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60310" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

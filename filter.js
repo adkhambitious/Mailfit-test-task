@@ -1,20 +1,20 @@
-const filterButtons = document.querySelectorAll(".js-country");
-const countryCards = document.querySelectorAll(".js-card-container");
-const filterResetButton = document.querySelector(".js-country-reset");
+import { swiper } from './swipe';
 
+const filterButtons = document.querySelectorAll(".js-country");
+const countrySlides = document.querySelectorAll(".js-swiper-slide");
+const filterResetButton = document.querySelector(".js-country-reset");
 const severalCountries = [];
 
 filterButtons.forEach(filterButton => {
-    
     filterButton.addEventListener("click", event => {
         filterResetButton.classList.remove('dropdown__item_clicked');
-        let filterDataAttr = event.target.dataset.city;
+        let filterDataAttr = event.target.dataset.country;
 
         severalCountries.push(filterDataAttr);
         filterButton.classList.add('dropdown__item_clicked');
         
-        countryCards.forEach(countryCard => {
-            let country = countryCard.dataset.cityCard;
+        countrySlides.forEach(countryCard => {
+            let country = countryCard.dataset.country;
             countryCard.classList.remove('card-container_hidden');
             if (filterDataAttr !== country && !severalCountries.includes(country)) {
 
@@ -22,14 +22,13 @@ filterButtons.forEach(filterButton => {
             }
 
         });
-        
     })
 })
 
 filterResetButton.addEventListener("click", event => {
     filterResetButton.classList.add('dropdown__item_clicked');
     
-    countryCards.forEach(countryCard => {
+    countrySlides.forEach(countryCard => {
         countryCard.classList.remove('card-container_hidden');
     });
     

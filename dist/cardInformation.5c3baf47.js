@@ -195,20 +195,12 @@ var createNewElement = function createNewElement(htmlString) {
   return tempElement.firstElementChild;
 };
 
-var createFullCard = function createFullCard(cityName, countryName, description, imagePath) {
-  var isReverse = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
-  return createNewElement("\n    <div class=\"full-card ".concat(isReverse ? "full-card_order_reverse" : '', " js-full-card\">\n        <img class=\"full-card__picture\" src=\"").concat(imagePath, "\" alt=\"The city you chose\">\n        <p class=\"current__city disposition_absolute\">").concat(cityName, "</p>\n        <p class=\"current__country disposition_absolute\">").concat(countryName, "</p>\n        <div class=\"card-about\">\n            <p class=\"full-card__text\">\n                ").concat(description, "\n            </p>\n            <a class=\"card-about__button\" href=\"#\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            <button class=\"icon\"><img class=\"icon__img\" src=\"").concat(_close.default, "\"></button>\n        </div>\n    </div>\n"));
+var createFullCard = function createFullCard(cityName, countryName, description, imagePath, shiftValue) {
+  var isReverse = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
+  return createNewElement("\n    <div style=\"left: ".concat(shiftValue, "px\" class=\"full-card ").concat(isReverse ? "full-card_order_reverse" : '', " js-full-card\">\n        <img class=\"full-card__picture\" src=\"").concat(imagePath, "\" alt=\"The city you chose\">\n        <p class=\"current__city disposition_absolute\">").concat(cityName, "</p>\n        <p class=\"current__country disposition_absolute\">").concat(countryName, "</p>\n        <div class=\"card-about\">\n            <p class=\"full-card__text\">\n                ").concat(description, "\n            </p>\n            <a class=\"card-about__button\" href=\"#\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            <button class=\"icon\"><img class=\"icon__img\" src=\"").concat(_close.default, "\"></button>\n        </div>\n    </div>\n"));
 };
 
-var currentCity = document.querySelector(".current__city"); // Город
-
-var currentCountry = document.querySelector(".current__country"); // Страна
-
-var fullCardText = document.querySelector(".full-card__text"); // Инфромация о стране
-
-var fullCardPicture = document.querySelector(".full-card__picture"); // Картинка карточки
-
-var cardImage = document.querySelector(".image");
+var swiperWrapper = document.querySelector('.swiper-wrapper');
 var countryCardContainers = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
 
 var deleteLastFullCard = [];
@@ -219,13 +211,20 @@ countryCardContainers.forEach(function (countryCardContainer) {
       previousFullCard.remove();
     }
 
-    previousFullCard = countryCardContainer;
+    var values = swiperWrapper.style.transform.split(',').map(function (item) {
+      return item.replace('translate3d(', '').replace(')', '').replace('px', '');
+    });
+    var shiftValue = Math.abs(values[0]);
+    console.log(shiftValue);
     var cityInformation = countryCardContainer.dataset.infoAbtCity;
+    var sideToOpen = countryCardContainer.dataset.order;
     var countryData = travels[cityInformation];
     var imagePath = countryCardContainer.querySelector('img').src;
-    var fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath);
+    var fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath, shiftValue);
+    console.log(fullCountryCard);
     countryCardContainer.append(fullCountryCard);
     previousFullCard = fullCountryCard;
+    console.log();
     var icon = fullCountryCard.querySelector(".icon");
     icon.addEventListener("click", function (event) {
       countryCardContainer.removeChild(fullCountryCard);
@@ -260,7 +259,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58573" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59671" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

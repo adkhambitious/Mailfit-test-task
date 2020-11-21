@@ -70,8 +70,8 @@ const createNewElement = (htmlString) => {
     return tempElement.firstElementChild;
 }
 
-const createFullCard = (cityName, countryName, description, imagePath, isReverse = false) => createNewElement(`
-    <div class="full-card ${isReverse ? "full-card_order_reverse" : ''} js-full-card">
+const createFullCard = (cityName, countryName, description, imagePath, shiftValue, isReverse = false) => createNewElement(`
+    <div style="left: ${shiftValue}px" class="full-card ${isReverse ? "full-card_order_reverse" : ''} js-full-card">
         <img class="full-card__picture" src="${imagePath}" alt="The city you chose">
         <p class="current__city disposition_absolute">${cityName}</p>
         <p class="current__country disposition_absolute">${countryName}</p>
@@ -85,32 +85,35 @@ const createFullCard = (cityName, countryName, description, imagePath, isReverse
     </div>
 `);
 
-
-const currentCity = document.querySelector(".current__city"); // Город
-const currentCountry = document.querySelector(".current__country"); // Страна
-const fullCardText = document.querySelector(".full-card__text"); // Инфромация о стране
-const fullCardPicture = document.querySelector(".full-card__picture"); // Картинка карточки
-const cardImage = document.querySelector(".image");
-
+const swiperWrapper = document.querySelector('.swiper-wrapper');
 const countryCardContainers = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
 const deleteLastFullCard = [];
 let previousFullCard;
 
+
 countryCardContainers.forEach((countryCardContainer) => {
-    
     countryCardContainer.querySelector('.js-card').addEventListener("click", event => {
         if(previousFullCard !== undefined) {
             previousFullCard.remove();
         }
-        previousFullCard = countryCardContainer;
+        const values = swiperWrapper.style.transform.split(',').map(item => item.replace('translate3d(', '').replace(')', '').replace('px', ''));
+        let shiftValue = Math.abs(values[0]);
+        
+        console.log(shiftValue)
         
         let cityInformation = countryCardContainer.dataset.infoAbtCity;
+        let sideToOpen = countryCardContainer.dataset.order;
+        
+        
+        
         const countryData = travels[cityInformation];
         const imagePath = countryCardContainer.querySelector('img').src;
-        const fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath);
+        const fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath, shiftValue);
+        console.log(fullCountryCard);
+        
         countryCardContainer.append(fullCountryCard);
         previousFullCard = fullCountryCard;
-        
+        console.log()
         
         const icon = fullCountryCard.querySelector(".icon");
         icon.addEventListener("click", event => {

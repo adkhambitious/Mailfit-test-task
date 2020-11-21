@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.swiper-wrapper {
+    height: auto !important;
+} 
+
 .container__content {
     display: flex;
     width: 95%;
@@ -121,6 +125,7 @@
 
 .full-card {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     height: 482px;
     width: 334px;
@@ -141,6 +146,7 @@
 .card-about {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 334px;
     height: 241px;
     border-radius: 0 0 10px 10px;
@@ -178,8 +184,6 @@
     align-items: center;
     height: 50px;
     width: 132px;
-    left: 41;
-    top: 546px;
     border-radius: 8px;
     font-family: "Golos";
     font-weight: 400;
@@ -196,18 +200,29 @@
     border: none;
 }
 
-.container__cards {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 158px);
-    grid-template-rows: repeat(8, 230px);
-    grid-column-gap: 18px;
-    grid-row-gap: 18px;
+.container__cards-flex {
+    display: flex;
+    width: 352px;
+    flex-wrap: wrap;
+    // justify-content: center;
     position: relative;
 }
 
+.swiper-container {
+    width: 345px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 485px;
+}
+  
+ .swiper-slide{
+     position: initial !important;
+ } 
+
 .card {
-    height: 100%;
+    width: 158px;
+    height: 230px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -291,14 +306,14 @@
         margin-top: 94px;
     }
     
-    .container__cards {
-        grid-template-columns: repeat(3, 216px);
-        grid-template-rows: repeat(4, 317px);
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
+    .swiper-container {
+        width: 702px;
+        height: 670px;
     }
     
     .card {
+        width: 216px;
+        height: 317px;
         background-size: cover;
     }
     
@@ -414,14 +429,16 @@
         border-radius: 0 10px 10px 0;
     }
     
-    .container__cards {
-        grid-template-columns: repeat(6, 170px);
-        grid-template-rows: repeat(2, 250px);
-        grid-column-gap: 30px;
-        grid-row-gap: 30px;
+    .swiper-container {
+        width: 1170px  !important;
+        margin-left: auto;
+        margin-right: auto;
     }
+
     .card {
         background-size: cover;
+        width: 170px;
+        height: 250px;
     }
     
     .image {
@@ -462,6 +479,11 @@
         right: auto;
         left: 20px;
     }
+    
+    .full-card_order_reverse .disposition_absolute {
+        left: 412px
+    }
+    
     .dropdown {
         width: 1170px;
     }
@@ -469,7 +491,14 @@
     .dropdown__list {
         width: 100%;
     }
+    
     .dropdown__item:hover {
         background-color: #80A0F2;
     }
+    
+    // .swiper-slide {
+    //     margin-top: 30px;
+    //     margin-left: 30px;
+    // }
+
 }

@@ -12321,7 +12321,7 @@ swiper.appendSlide(Object.values(_travels.travels).map(function (travel, index) 
 
 var _swipe = require("./swipe");
 
-var _travels = require("./travels.js");
+var _travels = require("./travels");
 
 var _createSlide = require("./createSlide");
 
@@ -12372,7 +12372,7 @@ var dropdownOpen = document.querySelector('.dropdown');
 dropdownButtonForMobile.addEventListener("click", function (event) {
   dropdownOpen.classList.toggle('dropdown_open');
 });
-},{"./swipe":"swipe.js","./travels.js":"travels.js","./createSlide":"createSlide.js","./cardInformation":"cardInformation.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./swipe":"swipe.js","./travels":"travels.js","./createSlide":"createSlide.js","./cardInformation":"cardInformation.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12400,7 +12400,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55026" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63482" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

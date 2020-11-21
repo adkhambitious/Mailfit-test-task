@@ -1,5 +1,5 @@
 import { swiper } from './swipe';
-import { travels } from './travels.js';
+import { travels } from './travels';
 import { createSlide } from './createSlide';
 import { initSlidesEventListeners } from './cardInformation';
 

@@ -11999,7 +11999,119 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"swipe.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"travels.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.travels = void 0;
+var travels = {
+  milan: {
+    countryCode: "italy",
+    city: "Милан",
+    country: "Италия",
+    information: "Милан –<br>крупный город на севере Италии, расположенный в Ломбардии, мировая столица дизайна и моды."
+  },
+  venice: {
+    countryCode: "italy",
+    city: "Венеция",
+    country: "Италия",
+    information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря."
+  },
+  berlin: {
+    countryCode: "germany",
+    city: "Берлин",
+    country: "Германия",
+    information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены"
+  },
+  fraiburg: {
+    countryCode: "germany",
+    city: "Фрайбург",
+    country: "Германия",
+    information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом."
+  },
+  athens: {
+    countryCode: "greece",
+    city: "Афины",
+    country: "Греция",
+    information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности."
+  },
+  madrid: {
+    countryCode: "spain",
+    city: "Мадрид",
+    country: "Испания",
+    information: "Мадрид – столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро."
+  },
+  barcelona: {
+    countryCode: "spain",
+    city: "Барселона",
+    country: "Испания",
+    information: "Барселона – столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством."
+  },
+  portu: {
+    countryCode: "portugal",
+    city: "Порту",
+    country: "Португалия",
+    information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета."
+  },
+  lissbon: {
+    countryCode: "portugal",
+    city: "Лиссабон",
+    country: "Португалия",
+    information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана."
+  },
+  vicenze: {
+    countryCode: "italy",
+    city: "Виченца",
+    country: "Италия",
+    information: "Виче́нца — город в итальянской области Венеция, административный центр одноимённой провинции."
+  },
+  kash: {
+    countryCode: "turkey",
+    city: "Каш",
+    country: "Турция",
+    information: "Каш — город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья."
+  },
+  antaliya: {
+    countryCode: "turkey",
+    city: "Анталия",
+    country: "Турция",
+    information: "Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями."
+  }
+};
+exports.travels = travels;
+},{}],"createNewElement.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createNewElement = void 0;
+
+var createNewElement = function createNewElement(htmlString) {
+  var tempElement = document.createElement('div');
+  tempElement.innerHTML = htmlString;
+  return tempElement.firstElementChild;
+};
+
+exports.createNewElement = createNewElement;
+},{}],"createSlide.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createSlide = void 0;
+
+var _createNewElement = require("./createNewElement");
+
+var createSlide = function createSlide(city, country, countryCode) {
+  return (0, _createNewElement.createNewElement)("\n<div class=\"swiper-slide js-swiper-slide\" data-country=\"".concat(countryCode, "\">\n    <div  data-info-abt-city=\"milan\" class=\"card-container js-card-container\">\n        <div class=\"card js-card\">\n            <img class=\"image\" src=\"/images/milan.png\" alt=\"Italian city, Milan\">\n            <p class=\"card__country city\">").concat(city, "</p>\n            <p class=\"card__country\">").concat(country, "</p>\n        </div>\n    </div>\n</div>"));
+};
+
+exports.createSlide = createSlide;
+},{"./createNewElement":"createNewElement.js"}],"swipe.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12010,6 +12122,10 @@ exports.swiper = void 0;
 var _swiper = _interopRequireDefault(require("swiper"));
 
 require("swiper/swiper-bundle.css");
+
+var _travels = require("./travels");
+
+var _createSlide = require("./createSlide");
 
 var _;
 
@@ -12041,7 +12157,10 @@ var swiper = new _swiper.default('.swiper-container', {
   }
 });
 exports.swiper = swiper;
-},{"swiper":"node_modules/swiper/swiper.esm.js","swiper/swiper-bundle.css":"node_modules/swiper/swiper-bundle.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+swiper.appendSlide(Object.values(_travels.travels).map(function (travel) {
+  return (0, _createSlide.createSlide)(travel.city, travel.country, travel.countryCode);
+}));
+},{"swiper":"node_modules/swiper/swiper.esm.js","swiper/swiper-bundle.css":"node_modules/swiper/swiper-bundle.css","./travels":"travels.js","./createSlide":"createSlide.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12069,7 +12188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59671" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50351" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

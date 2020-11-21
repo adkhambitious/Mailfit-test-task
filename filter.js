@@ -1,43 +1,42 @@
 import { swiper } from './swipe';
+import { travels } from './travels.js';
+import { createSlide } from './createSlide';
+import { initSlidesEventListeners } from './cardInformation';
 
 const filterButtons = document.querySelectorAll(".js-country");
 const countrySlides = document.querySelectorAll(".js-swiper-slide");
 const filterResetButton = document.querySelector(".js-country-reset");
-const severalCountries = [];
+const selectedCountries = [];
 
 filterButtons.forEach(filterButton => {
     filterButton.addEventListener("click", event => {
         filterResetButton.classList.remove('dropdown__item_clicked');
-        let filterDataAttr = event.target.dataset.country;
+        let selectedCountry = event.target.dataset.country;
 
-        severalCountries.push(filterDataAttr);
+        selectedCountries.push(selectedCountry);
         filterButton.classList.add('dropdown__item_clicked');
         
-        countrySlides.forEach(countryCard => {
-            let country = countryCard.dataset.country;
-            countryCard.classList.remove('card-container_hidden');
-            if (filterDataAttr !== country && !severalCountries.includes(country)) {
-
-                countryCard.classList.add('card-container_hidden');
-            }
-
-        });
+        const filteredTravels = Object.values(travels)
+        .filter((travel) => selectedCountries.includes(travel.countryCode))
+        .map((travel, index) => createSlide(travel.city, travel.cityCode, travel.country, travel.countryCode, travel.imagePath, index));
+        console.log(filteredTravels,selectedCountries);
+        swiper.removeAllSlides();
+        
+        swiper.appendSlide(filteredTravels);
+        initSlidesEventListeners();
     })
 })
 
 filterResetButton.addEventListener("click", event => {
     filterResetButton.classList.add('dropdown__item_clicked');
-    
-    countrySlides.forEach(countryCard => {
-        countryCard.classList.remove('card-container_hidden');
-    });
-    
     filterButtons.forEach(filterButton => {
         filterButton.classList.remove('dropdown__item_clicked');
     });
     
-    severalCountries.length = 0;
-
+    swiper.removeAllSlides();
+    swiper.appendSlide(Object.values(travels).map((travel, index) => createSlide(travel.city, travel.cityCode, travel.country, travel.countryCode, travel.imagePath, index)));
+    initSlidesEventListeners();
+    selectedCountries.length = 0;
 });
 
 

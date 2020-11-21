@@ -119,75 +119,182 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"icons/close.svg":[function(require,module,exports) {
 module.exports = "/close.1a8adba6.svg";
-},{}],"cardInformation.js":[function(require,module,exports) {
+},{}],"images/milan.png":[function(require,module,exports) {
+module.exports = "/milan.ffe87a44.png";
+},{}],"images/berlin.png":[function(require,module,exports) {
+module.exports = "/berlin.8daf8a40.png";
+},{}],"images/venice.png":[function(require,module,exports) {
+module.exports = "/venice.4a4ed4b5.png";
+},{}],"images/vicenze.png":[function(require,module,exports) {
+module.exports = "/vicenze.975b272d.png";
+},{}],"images/barcelona.png":[function(require,module,exports) {
+module.exports = "/barcelona.76e9c29b.png";
+},{}],"images/madrid.png":[function(require,module,exports) {
+module.exports = "/madrid.83dd1868.png";
+},{}],"images/fraiburg.png":[function(require,module,exports) {
+module.exports = "/fraiburg.242e322b.png";
+},{}],"images/kash.png":[function(require,module,exports) {
+module.exports = "/kash.3c561d1d.png";
+},{}],"images/antaliya.png":[function(require,module,exports) {
+module.exports = "/antaliya.ba1d7835.png";
+},{}],"images/athens.png":[function(require,module,exports) {
+module.exports = "/athens.0c7d9a57.png";
+},{}],"images/portu.png":[function(require,module,exports) {
+module.exports = "/portu.3f84a903.png";
+},{}],"images/lissbon.png":[function(require,module,exports) {
+module.exports = "/lissbon.74ea4c5a.png";
+},{}],"travels.js":[function(require,module,exports) {
 "use strict";
 
-var _close = _interopRequireDefault(require("./icons/close.svg"));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.travels = void 0;
+
+var _milan = _interopRequireDefault(require("./images/milan.png"));
+
+var _berlin = _interopRequireDefault(require("./images/berlin.png"));
+
+var _venice = _interopRequireDefault(require("./images/venice.png"));
+
+var _vicenze = _interopRequireDefault(require("./images/vicenze.png"));
+
+var _barcelona = _interopRequireDefault(require("./images/barcelona.png"));
+
+var _madrid = _interopRequireDefault(require("./images/madrid.png"));
+
+var _fraiburg = _interopRequireDefault(require("./images/fraiburg.png"));
+
+var _kash = _interopRequireDefault(require("./images/kash.png"));
+
+var _antaliya = _interopRequireDefault(require("./images/antaliya.png"));
+
+var _athens = _interopRequireDefault(require("./images/athens.png"));
+
+var _portu = _interopRequireDefault(require("./images/portu.png"));
+
+var _lissbon = _interopRequireDefault(require("./images/lissbon.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var travels = {
   milan: {
+    cityCode: "milan",
+    countryCode: "italy",
+    direction: "normal",
     city: "Милан",
     country: "Италия",
-    information: "Милан –<br>крупный город на севере Италии, расположенный в Ломбардии, мировая столица дизайна и моды."
+    information: "Милан –<br>крупный город на севере Италии, расположенный в Ломбардии, мировая столица дизайна и моды.",
+    imagePath: _milan.default
   },
   venice: {
+    cityCode: "venice",
+    countryCode: "italy",
+    direction: "normal",
     city: "Венеция",
     country: "Италия",
-    information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря."
+    information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря.",
+    imagePath: _berlin.default
   },
   berlin: {
+    cityCode: "berlin",
+    countryCode: "germany",
+    direction: "normal",
     city: "Берлин",
     country: "Германия",
-    information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены"
+    information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены",
+    imagePath: _venice.default
   },
   fraiburg: {
+    cityCode: "fraiburg",
+    countryCode: "germany",
+    direction: "normal",
     city: "Фрайбург",
     country: "Германия",
-    information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом."
+    information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом.",
+    imagePath: _vicenze.default
   },
   athens: {
+    cityCode: "athens",
+    countryCode: "greece",
+    direction: "reverse",
     city: "Афины",
     country: "Греция",
-    information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности."
+    information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности.",
+    imagePath: _barcelona.default
   },
   madrid: {
+    cityCode: "madrid",
+    countryCode: "spain",
+    direction: "reverse",
     city: "Мадрид",
     country: "Испания",
-    information: "Мадрид – столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро."
+    information: "Мадрид – столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро.",
+    imagePath: _madrid.default
   },
   barcelona: {
+    cityCode: "barcelona",
+    countryCode: "spain",
+    direction: "normal",
     city: "Барселона",
     country: "Испания",
-    information: "Барселона – столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством."
+    information: "Барселона – столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством.",
+    imagePath: _fraiburg.default
   },
   portu: {
+    cityCode: "portu",
+    countryCode: "portugal",
+    direction: "normal",
     city: "Порту",
     country: "Португалия",
-    information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета."
+    information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета.",
+    imagePath: _kash.default
   },
   lissbon: {
+    cityCode: "lissbon",
+    countryCode: "portugal",
+    direction: "normal",
     city: "Лиссабон",
     country: "Португалия",
-    information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана."
+    information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана.",
+    imagePath: _antaliya.default
   },
   vicenze: {
+    cityCode: "vicenze",
+    countryCode: "italy",
+    direction: "normal",
     city: "Виченца",
     country: "Италия",
-    information: "Виче́нца — город в итальянской области Венеция, административный центр одноимённой провинции."
+    information: "Виче́нца — город в итальянской области Венеция, административный центр одноимённой провинции.",
+    imagePath: _athens.default
   },
   kash: {
+    cityCode: "kash",
+    countryCode: "turkey",
+    direction: "reverse",
     city: "Каш",
     country: "Турция",
-    information: "Каш — город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья."
+    information: "Каш — город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья.",
+    imagePath: _portu.default
   },
   antaliya: {
+    cityCode: "antaliya",
+    countryCode: "turkey",
+    direction: "reverse",
     city: "Анталия",
     country: "Турция",
-    information: "Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями."
+    information: "Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями.",
+    imagePath: _lissbon.default
   }
 };
+exports.travels = travels;
+},{"./images/milan.png":"images/milan.png","./images/berlin.png":"images/berlin.png","./images/venice.png":"images/venice.png","./images/vicenze.png":"images/vicenze.png","./images/barcelona.png":"images/barcelona.png","./images/madrid.png":"images/madrid.png","./images/fraiburg.png":"images/fraiburg.png","./images/kash.png":"images/kash.png","./images/antaliya.png":"images/antaliya.png","./images/athens.png":"images/athens.png","./images/portu.png":"images/portu.png","./images/lissbon.png":"images/lissbon.png"}],"createNewElement.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createNewElement = void 0;
 
 var createNewElement = function createNewElement(htmlString) {
   var tempElement = document.createElement('div');
@@ -195,43 +302,63 @@ var createNewElement = function createNewElement(htmlString) {
   return tempElement.firstElementChild;
 };
 
-var createFullCard = function createFullCard(cityName, countryName, description, imagePath, shiftValue) {
-  var isReverse = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
-  return createNewElement("\n    <div style=\"left: ".concat(shiftValue, "px\" class=\"full-card ").concat(isReverse ? "full-card_order_reverse" : '', " js-full-card\">\n        <img class=\"full-card__picture\" src=\"").concat(imagePath, "\" alt=\"The city you chose\">\n        <p class=\"current__city disposition_absolute\">").concat(cityName, "</p>\n        <p class=\"current__country disposition_absolute\">").concat(countryName, "</p>\n        <div class=\"card-about\">\n            <p class=\"full-card__text\">\n                ").concat(description, "\n            </p>\n            <a class=\"card-about__button\" href=\"#\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            <button class=\"icon\"><img class=\"icon__img\" src=\"").concat(_close.default, "\"></button>\n        </div>\n    </div>\n"));
+exports.createNewElement = createNewElement;
+},{}],"cardInformation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.initSlidesEventListeners = void 0;
+
+var _close = _interopRequireDefault(require("./icons/close.svg"));
+
+var _travels = require("./travels");
+
+var _createNewElement = require("./createNewElement");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var createFullCard = function createFullCard(cityName, countryName, description, imagePath, shiftValue, order) {
+  return (0, _createNewElement.createNewElement)("\n    <div style=\"left: ".concat(shiftValue, "px\" class=\"full-card ").concat(order > 2 && order < 9 ? "full-card_order_reverse" : '', " js-full-card\">\n        <img class=\"full-card__picture\" src=\"").concat(imagePath, "\" alt=\"The city you chose\">\n        <p class=\"current__city disposition_absolute\">").concat(cityName, "</p>\n        <p class=\"current__country disposition_absolute\">").concat(countryName, "</p>\n        <div class=\"card-about\">\n            <p class=\"full-card__text\">\n                ").concat(description, "\n            </p>\n            <a class=\"card-about__button\" href=\"#\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            <button class=\"icon\"><img class=\"icon__img\" src=\"").concat(_close.default, "\"></button>\n        </div>\n    </div>\n"));
 };
 
 var swiperWrapper = document.querySelector('.swiper-wrapper');
-var countryCardContainers = document.querySelectorAll(".js-card-container"); // Все кнопки карточек
-
 var deleteLastFullCard = [];
 var previousFullCard;
-countryCardContainers.forEach(function (countryCardContainer) {
-  countryCardContainer.querySelector('.js-card').addEventListener("click", function (event) {
-    if (previousFullCard !== undefined) {
-      previousFullCard.remove();
-    }
 
-    var values = swiperWrapper.style.transform.split(',').map(function (item) {
-      return item.replace('translate3d(', '').replace(')', '').replace('px', '');
-    });
-    var shiftValue = Math.abs(values[0]);
-    console.log(shiftValue);
-    var cityInformation = countryCardContainer.dataset.infoAbtCity;
-    var sideToOpen = countryCardContainer.dataset.order;
-    var countryData = travels[cityInformation];
-    var imagePath = countryCardContainer.querySelector('img').src;
-    var fullCountryCard = createFullCard(countryData.city, countryData.country, countryData.information, imagePath, shiftValue);
-    console.log(fullCountryCard);
-    countryCardContainer.append(fullCountryCard);
-    previousFullCard = fullCountryCard;
-    console.log();
-    var icon = fullCountryCard.querySelector(".icon");
-    icon.addEventListener("click", function (event) {
-      countryCardContainer.removeChild(fullCountryCard);
+var initSlidesEventListeners = function initSlidesEventListeners() {
+  var countryCardContainers = document.querySelectorAll(".js-card-container");
+  countryCardContainers.forEach(function (countryCardContainer) {
+    countryCardContainer.querySelector('.js-card').addEventListener("click", function (event) {
+      if (previousFullCard !== undefined) {
+        previousFullCard.remove();
+      }
+
+      var values = swiperWrapper.style.transform.split(',').map(function (item) {
+        return item.replace('translate3d(', '').replace(')', '').replace('px', '');
+      });
+      var shiftValue = Math.abs(values[0]);
+      var cityCode = countryCardContainer.dataset.infoAbtCity;
+      var order = countryCardContainer.dataset.order;
+      console.log(order);
+      var travel = _travels.travels[cityCode];
+      var sideToOpen = travel.direction;
+      console.log(travel, sideToOpen);
+      var imagePath = countryCardContainer.querySelector('img').src;
+      var fullCountryCard = createFullCard(travel.city, travel.country, travel.information, imagePath, shiftValue, order);
+      countryCardContainer.append(fullCountryCard);
+      previousFullCard = fullCountryCard;
+      var icon = fullCountryCard.querySelector(".icon");
+      icon.addEventListener("click", function (event) {
+        countryCardContainer.removeChild(fullCountryCard);
+      });
     });
   });
-});
-},{"./icons/close.svg":"icons/close.svg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+};
+
+exports.initSlidesEventListeners = initSlidesEventListeners;
+},{"./icons/close.svg":"icons/close.svg","./travels":"travels.js","./createNewElement":"createNewElement.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -259,7 +386,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59671" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55026" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

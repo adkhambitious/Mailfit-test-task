@@ -1,7 +1,7 @@
 import { swiper } from './swipe';
 import { travels } from './travels';
-import { createSlide } from './createSlide';
 import { initSlidesEventListeners } from './cardInformation';
+import { createSlide } from './createSlide';
 
 const filterButtons = document.querySelectorAll(".js-country");
 const countrySlides = document.querySelectorAll(".js-swiper-slide");

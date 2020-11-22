@@ -36,12 +36,14 @@ const initSlidesEventListeners = () => {
             let order = countryCardContainer.dataset.order;
             console.log((order > 2 && order > 8) && order < 6);
             console.log(order);
+
             const travel = travels[cityCode];
-            let sideToOpen = travel.direction;
-            console.log(travel, sideToOpen);
+        
+            console.log(travel);
             const imagePath = countryCardContainer.querySelector('img').src;
             const fullCountryCard = createFullCard(travel.city, travel.country, travel.information, imagePath, shiftValue, order);
             countryCardContainer.append(fullCountryCard);
+            console.log(fullCountryCard, countryCardContainer)
             previousFullCard = fullCountryCard;
 
             const icon = fullCountryCard.querySelector(".icon");

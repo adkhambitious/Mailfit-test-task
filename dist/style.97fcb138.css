@@ -322,11 +322,17 @@ body {
 
 .pagination {
   position: static !important;
+  margin-top: 10px;
 }
 
 .swiper-pagination-bullet {
   margin-left: 10px;
+  opacity: 1 !important;
   background-color: #ffffff !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0047FF !important;
 }
 
 @media (min-width: 768px) {
@@ -433,7 +439,7 @@ body {
   }
 
   .container__content {
-    margin: 36px 20px;
+    margin: 30px 20px;
   }
 
   .swiper-button-next, .swiper-button-prev {
@@ -553,9 +559,16 @@ body {
 
   .swiper-button-next, .swiper-button-prev {
     display: flex !important;
-    background-color: yellow;
+    color: #ffffff !important;
     cursor: pointer !important;
     top: 57% !important;
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 50%;
+  }
+
+  .swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: #0047FE;
   }
 
   .pagination {

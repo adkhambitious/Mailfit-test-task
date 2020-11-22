@@ -143,6 +143,12 @@ module.exports = "/athens.0c7d9a57.png";
 module.exports = "/portu.3f84a903.png";
 },{}],"images/lissbon.png":[function(require,module,exports) {
 module.exports = "/lissbon.74ea4c5a.png";
+},{}],"images/tokio.png":[function(require,module,exports) {
+module.exports = "/tokio.dccf7614.png";
+},{}],"images/miami.jpg":[function(require,module,exports) {
+module.exports = "/miami.c5e95ad9.jpg";
+},{}],"images/kazan.jpg":[function(require,module,exports) {
+module.exports = "/kazan.81d6d72f.jpg";
 },{}],"travels.js":[function(require,module,exports) {
 "use strict";
 
@@ -175,13 +181,18 @@ var _portu = _interopRequireDefault(require("./images/portu.png"));
 
 var _lissbon = _interopRequireDefault(require("./images/lissbon.png"));
 
+var _tokio = _interopRequireDefault(require("./images/tokio.png"));
+
+var _miami = _interopRequireDefault(require("./images/miami.jpg"));
+
+var _kazan = _interopRequireDefault(require("./images/kazan.jpg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var travels = {
   milan: {
     cityCode: "milan",
     countryCode: "italy",
-    direction: "normal",
     city: "Милан",
     country: "Италия",
     information: "Милан –<br>крупный город на севере Италии, расположенный в Ломбардии, мировая столица дизайна и моды.",
@@ -190,7 +201,6 @@ var travels = {
   venice: {
     cityCode: "venice",
     countryCode: "italy",
-    direction: "normal",
     city: "Венеция",
     country: "Италия",
     information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря.",
@@ -199,7 +209,6 @@ var travels = {
   berlin: {
     cityCode: "berlin",
     countryCode: "germany",
-    direction: "normal",
     city: "Берлин",
     country: "Германия",
     information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены",
@@ -208,7 +217,6 @@ var travels = {
   fraiburg: {
     cityCode: "fraiburg",
     countryCode: "germany",
-    direction: "normal",
     city: "Фрайбург",
     country: "Германия",
     information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом.",
@@ -217,7 +225,6 @@ var travels = {
   athens: {
     cityCode: "athens",
     countryCode: "greece",
-    direction: "reverse",
     city: "Афины",
     country: "Греция",
     information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности.",
@@ -226,25 +233,22 @@ var travels = {
   madrid: {
     cityCode: "madrid",
     countryCode: "spain",
-    direction: "reverse",
     city: "Мадрид",
     country: "Испания",
-    information: "Мадрид – столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро.",
+    information: "Мадрид – <br>столица Испании в центре Пиренейского полуострова, город элегантных бульваров и огромных ухоженных парков, к числу которых относится парк Буэн-Ретиро.",
     imagePath: _madrid.default
   },
   barcelona: {
     cityCode: "barcelona",
     countryCode: "spain",
-    direction: "normal",
     city: "Барселона",
     country: "Испания",
-    information: "Барселона – столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством.",
+    information: "Барселона – <br>столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством.",
     imagePath: _fraiburg.default
   },
   portu: {
     cityCode: "portu",
     countryCode: "portugal",
-    direction: "normal",
     city: "Порту",
     country: "Португалия",
     information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета.",
@@ -253,7 +257,6 @@ var travels = {
   lissbon: {
     cityCode: "lissbon",
     countryCode: "portugal",
-    direction: "normal",
     city: "Лиссабон",
     country: "Португалия",
     information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана.",
@@ -262,33 +265,54 @@ var travels = {
   vicenze: {
     cityCode: "vicenze",
     countryCode: "italy",
-    direction: "normal",
     city: "Виченца",
     country: "Италия",
-    information: "Виче́нца — город в итальянской области Венеция, административный центр одноимённой провинции.",
+    information: "Виче́нца — <br>город в итальянской области Венеция, административный центр одноимённой провинции.",
     imagePath: _athens.default
   },
   kash: {
     cityCode: "kash",
     countryCode: "turkey",
-    direction: "reverse",
     city: "Каш",
     country: "Турция",
-    information: "Каш — город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья.",
+    information: "Каш — <br>город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья.",
     imagePath: _portu.default
   },
   antaliya: {
     cityCode: "antaliya",
     countryCode: "turkey",
-    direction: "reverse",
     city: "Анталия",
     country: "Турция",
-    information: "Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями.",
+    information: "Анталья – <br>курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями.",
     imagePath: _lissbon.default
+  },
+  tokio: {
+    cityCode: "tokio",
+    countryCode: "japan",
+    city: "Токио",
+    country: "Япония",
+    information: "Токио — <br>столица Японии, её административный, финансовый, промышленный и политический центр. Крупнейшая городская экономика мира.",
+    imagePath: _tokio.default
+  },
+  miami: {
+    cityCode: "miami",
+    countryCode: "usa",
+    city: "Майами",
+    country: "США",
+    information: "Майами-Бич – <br>город на юге штата Флорида. Он расположен на острове, а с Майами соединен мостами. Широкие пляжи Майами-Бич простираются от парка Норт-Шор-Опен-Спейс до парка Саут-Пойнт, пересекая парк Луммус.",
+    imagePath: _miami.default
+  },
+  kazan: {
+    cityCode: "kazan",
+    countryCode: "russia",
+    city: "Казань",
+    country: "Россия",
+    information: "Казань – <br>город на юго-западе России, расположенный на берегах Волги и Казанки. В столице находится древний кремль – крепость, известная своими музеями и святыми местами.",
+    imagePath: _kazan.default
   }
 };
 exports.travels = travels;
-},{"./images/milan.png":"images/milan.png","./images/berlin.png":"images/berlin.png","./images/venice.png":"images/venice.png","./images/vicenze.png":"images/vicenze.png","./images/barcelona.png":"images/barcelona.png","./images/madrid.png":"images/madrid.png","./images/fraiburg.png":"images/fraiburg.png","./images/kash.png":"images/kash.png","./images/antaliya.png":"images/antaliya.png","./images/athens.png":"images/athens.png","./images/portu.png":"images/portu.png","./images/lissbon.png":"images/lissbon.png"}],"createNewElement.js":[function(require,module,exports) {
+},{"./images/milan.png":"images/milan.png","./images/berlin.png":"images/berlin.png","./images/venice.png":"images/venice.png","./images/vicenze.png":"images/vicenze.png","./images/barcelona.png":"images/barcelona.png","./images/madrid.png":"images/madrid.png","./images/fraiburg.png":"images/fraiburg.png","./images/kash.png":"images/kash.png","./images/antaliya.png":"images/antaliya.png","./images/athens.png":"images/athens.png","./images/portu.png":"images/portu.png","./images/lissbon.png":"images/lissbon.png","./images/tokio.png":"images/tokio.png","./images/miami.jpg":"images/miami.jpg","./images/kazan.jpg":"images/kazan.jpg"}],"createNewElement.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -320,7 +344,7 @@ var _createNewElement = require("./createNewElement");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var createFullCard = function createFullCard(cityName, countryName, description, imagePath, shiftValue, order) {
-  return (0, _createNewElement.createNewElement)("\n    <div style=\"left: ".concat(shiftValue, "px\" class=\"full-card ").concat(order > 2 && order < 9 ? "full-card_order_reverse" : '', " js-full-card\">\n        <img class=\"full-card__picture\" src=\"").concat(imagePath, "\" alt=\"The city you chose\">\n        <p class=\"current__city disposition_absolute\">").concat(cityName, "</p>\n        <p class=\"current__country disposition_absolute\">").concat(countryName, "</p>\n        <div class=\"card-about\">\n            <p class=\"full-card__text\">\n                ").concat(description, "\n            </p>\n            <a class=\"card-about__button\" href=\"#\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            <button class=\"icon\"><img class=\"icon__img\" src=\"").concat(_close.default, "\"></button>\n        </div>\n    </div>\n"));
+  return (0, _createNewElement.createNewElement)("\n    <div style=\"left: ".concat(shiftValue, "px\" class=\"full-card ").concat(order > 3 && order < 6 || order > 9 ? "full-card_order_reverse" : '', " js-full-card\">\n        <img class=\"full-card__picture\" src=\"").concat(imagePath, "\" alt=\"The city you chose\">\n        <p class=\"current__city disposition_absolute\">").concat(cityName, "</p>\n        <p class=\"current__country disposition_absolute\">").concat(countryName, "</p>\n        <div class=\"card-about\">\n            <p class=\"full-card__text\">\n                ").concat(description, "\n            </p>\n            <a class=\"card-about__button\" href=\"#\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            <button class=\"icon\"><img class=\"icon__img\" src=\"").concat(_close.default, "\"></button>\n        </div>\n    </div>\n"));
 };
 
 var swiperWrapper = document.querySelector('.swiper-wrapper');
@@ -341,6 +365,7 @@ var initSlidesEventListeners = function initSlidesEventListeners() {
       var shiftValue = Math.abs(values[0]);
       var cityCode = countryCardContainer.dataset.infoAbtCity;
       var order = countryCardContainer.dataset.order;
+      console.log(order > 2 && order > 8 && order < 6);
       console.log(order);
       var travel = _travels.travels[cityCode];
       var sideToOpen = travel.direction;
@@ -386,7 +411,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64170" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51640" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

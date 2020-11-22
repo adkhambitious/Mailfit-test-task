@@ -3,7 +3,7 @@ import { travels } from './travels';
 import { createNewElement } from './createNewElement';
 
 const createFullCard = (cityName, countryName, description, imagePath, shiftValue, order) => createNewElement(`
-    <div style="left: ${shiftValue}px" class="full-card ${(order > 2 && order < 9) ? "full-card_order_reverse" : ''} js-full-card">
+    <div style="left: ${shiftValue}px" class="full-card ${(order > 3 && order < 6) || order > 9 ? "full-card_order_reverse" : ''} js-full-card">
         <img class="full-card__picture" src="${imagePath}" alt="The city you chose">
         <p class="current__city disposition_absolute">${cityName}</p>
         <p class="current__country disposition_absolute">${countryName}</p>
@@ -34,14 +34,13 @@ const initSlidesEventListeners = () => {
 
             let cityCode = countryCardContainer.dataset.infoAbtCity;
             let order = countryCardContainer.dataset.order;
-            console.log(order)
-            
+            console.log((order > 2 && order > 8) && order < 6);
+            console.log(order);
             const travel = travels[cityCode];
             let sideToOpen = travel.direction;
             console.log(travel, sideToOpen);
             const imagePath = countryCardContainer.querySelector('img').src;
             const fullCountryCard = createFullCard(travel.city, travel.country, travel.information, imagePath, shiftValue, order);
-            
             countryCardContainer.append(fullCountryCard);
             previousFullCard = fullCountryCard;
 

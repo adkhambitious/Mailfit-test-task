@@ -144,8 +144,13 @@ body {
     width: 334px;
     position: absolute;
     top: 0;
-    z-index: 4;
     left: 0;
+    z-index: 10;
+}
+
+.swiper-slide {
+    position: static !important;
+    transform: none !important;
 }
 
 .full-card__picture {
@@ -228,9 +233,9 @@ body {
     height: 485px;
 }
   
- .swiper-slide{
-     position: initial !important;
- } 
+//  .swiper-slide{
+//      position: initial !important;
+//  } 
 
 .card {
     width: 158px;
@@ -326,7 +331,7 @@ body {
     
     .card-about {
         border-radius: 0 10px 10px 0;
-        width: 480px;
+        width: 482px;
         height: 317px;
     }
     
@@ -433,6 +438,8 @@ body {
     .full-card {
         width: 570px;
         height: 250px;
+        // Prevent dynamic left added with JS to shift the full card
+        left: 0 !important;
     }
     
     .full-card__picture {

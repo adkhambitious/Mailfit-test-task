@@ -1,4 +1,10 @@
+Hi to everyone!
+
 Mailfit travel guide
 travel with Mailfit
 
-Hi to everyone!
+Инструкция для запуска:
+
+- npm install
+- npm run dev
+

@@ -40,12 +40,8 @@ const initSlidesEventListeners = () => {
             const travel = travels[cityCode];
         
             const imagePath = countryCardContainer.querySelector('img').src;
-            
-            console.log(event.currentTarget.getBoundingClientRect().left + FULL_CARD_WIDTH, swiperContainerRightBorder);
             const expectedRightBorder = event.currentTarget.getBoundingClientRect().left + FULL_CARD_WIDTH;
             order = expectedRightBorder > swiperContainerRightBorder;
-            console.log(order)
-
             const fullCountryCard = createFullCard(
                 travel.city, 
                 travel.country, 
@@ -55,7 +51,6 @@ const initSlidesEventListeners = () => {
                 order
             );
             countryCardContainer.append(fullCountryCard);
-            // console.log(fullCountryCard, countryCardContainer)
             previousFullCard = fullCountryCard;
 
             const icon = fullCountryCard.querySelector(".icon");

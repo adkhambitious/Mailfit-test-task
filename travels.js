@@ -31,7 +31,7 @@ const travels = {
         city: "Венеция",
         country: "Италия",
         information: "Венеция –<br>столица одноименной области на севере Италии. Город расположен на более чем 100 небольших островах в лагуне Адриатического моря.",
-        imagePath: berlinPath
+        imagePath: venicePath
     },
     berlin: {
         cityCode: "berlin",
@@ -39,7 +39,7 @@ const travels = {
         city: "Берлин",
         country: "Германия",
         information: "Берлин –<br>столица Германии, история которой восходит к XIII в. О непростой истории города в XX в. напоминают Мемориал жертвам Холокоста и граффити на руинах Берлинской стены",
-        imagePath: venicePath
+        imagePath: berlinPath
     },
     fraiburg: {
         cityCode: "fraiburg",
@@ -47,7 +47,7 @@ const travels = {
         city: "Фрайбург",
         country: "Германия",
         information: "Фрайбург-им-Брайсгау –<br>оживленный университетский город в горах Шварцвальд на юго-западе Германии, известный своим умеренным климатом и восстановленным после войны средневековым Старым городом.",
-        imagePath: vicenzePath
+        imagePath: fraiburgPath
     },
     athens: {
         cityCode: "athens",
@@ -55,7 +55,7 @@ const travels = {
         city: "Афины",
         country: "Греция",
         information: "Афины –<br>столица современной Греции и центр древнегреческой цивилизации, которая славилась своим могуществом в эпоху античности.",
-        imagePath: barcelonaPath
+        imagePath: athensPath
     },
     madrid: {
         cityCode: "madrid",
@@ -71,7 +71,7 @@ const travels = {
         city: "Барселона",
         country: "Испания",
         information: "Барселона – <br>столица автономной области Каталония. Этот многонациональный город знаменит своей архитектурой и искусством.",
-        imagePath: fraiburgPath
+        imagePath: barcelonaPath
     },
     portu: {
         cityCode: "portu",
@@ -79,7 +79,7 @@ const travels = {
         city: "Порту",
         country: "Португалия",
         information: "Порту -<br>второй по величине (после Лиссабона) город в Португалии, центр одноимённого округа и муниципалитета.",
-        imagePath: kashPath
+        imagePath: portuPath
     },
     lissbon: {
         cityCode: "lissbon",
@@ -87,7 +87,7 @@ const travels = {
         city: "Лиссабон",
         country: "Португалия",
         information: "Лиссабон – <br>столица Португалии, расположенная на нескольких холмах и омываемая водами Атлантического океана.",
-        imagePath: antaliyaPath
+        imagePath: lissbonPath
     },
     vicenze: {
         cityCode: "vicenze",
@@ -95,7 +95,7 @@ const travels = {
         city: "Виченца",
         country: "Италия",
         information: "Виче́нца — <br>город в итальянской области Венеция, административный центр одноимённой провинции.",
-        imagePath: athensPath
+        imagePath: vicenzePath
     },
     kash: {
         cityCode: "kash",
@@ -103,7 +103,7 @@ const travels = {
         city: "Каш",
         country: "Турция",
         information: "Каш — <br>город и порт на средиземноморском побережье Турции, центр одноименного района провинции Анталья.",
-        imagePath: portuPath
+        imagePath: kashPath
     },
     antaliya: {
         cityCode: "antaliya",
@@ -111,7 +111,7 @@ const travels = {
         city: "Анталия",
         country: "Турция",
         information: "Анталья – <br>курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями.",
-        imagePath: lissbonPath
+        imagePath: antaliyaPath
     },
     tokio: {
         cityCode: "tokio",

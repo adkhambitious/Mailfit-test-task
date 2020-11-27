@@ -6,7 +6,7 @@ import barcelonaPath from './images/barcelona.png';
 import madridPath from './images/madrid.png';
 import fraiburgPath from './images/fraiburg.png';
 import kashPath from './images/kash.png';
-import antaliyaPath from './images/antaliya.png';
+import antaliyaPath from './images/antaliya.jpg';
 import athensPath from './images/athens.png';
 import portuPath from './images/portu.png';
 import lissbonPath from './images/lissbon.png';

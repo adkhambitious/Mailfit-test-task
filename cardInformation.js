@@ -12,7 +12,7 @@ const createFullCard = (cityName, countryName, description, imagePath, shiftValu
                 ${description}
             </p>
             <a class="card-about__button" href="#">Подробнее</a>
-            <button class="icon"><img class="icon__img" src="${closeSvg}"></button>
+            <button class="closeIcon"><img class="icon__img" src="${closeSvg}"></button>
         </div>
     </div>
 `);
@@ -21,7 +21,6 @@ const swiperWrapper = document.querySelector('.swiper-wrapper');
 const swiperContainerRightBorder = swiperWrapper.parentElement.getBoundingClientRect().right;
 const FULL_CARD_WIDTH = 570;
 
-const deleteLastFullCard = [];
 let previousFullCard;
 
 const initSlidesEventListeners = () => {
@@ -53,8 +52,8 @@ const initSlidesEventListeners = () => {
             countryCardContainer.append(fullCountryCard);
             previousFullCard = fullCountryCard;
 
-            const icon = fullCountryCard.querySelector(".icon");
-            icon.addEventListener("click", event => {
+            const closeIcon = fullCountryCard.querySelector(".icon-close");
+            closeIcon.addEventListener("click", event => {
                 countryCardContainer.removeChild(fullCountryCard);
             })
         })

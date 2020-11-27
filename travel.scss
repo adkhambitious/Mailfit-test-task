@@ -1,0 +1,362 @@
+.swiper-slide {
+    position: static !important;
+    transform: none !important;
+}
+
+.full-card {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 482px;
+    width: 334px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    @include for-tablet-up {
+        width: 700px;
+        height: 317px;
+        flex-direction: row;
+        top: auto;
+    }
+    
+    @include for-desktop-up {
+        width: 570px;
+        height: 250px;
+        // Prevent dynamic left added with JS to shift the full card
+        left: 0 !important;
+    }
+}
+
+.full-card_order_reverse {  
+    @include for-desktop-up {
+        right: 0;
+        left: auto !important;
+        flex-direction: row-reverse;
+
+        .card-about {
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .full-card__picture {
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .icon-close {
+            right: auto;
+            left: 20px;
+        }
+        
+        .disposition_absolute {
+            left: 412px
+        }
+    }
+}
+
+.full-card__picture {
+    display: flex;
+    width: 340px;
+    height: 241px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+ 
+    @include for-tablet-up {
+        width: 216px;
+        height: 317px;
+        border-radius: 10px 0 0 10px;
+    }
+    
+    @include for-desktop-up {
+        border-radius: 10px 0 0 10px;
+        height: 250px;
+        width: 170px;
+        object-fit: cover;
+        object-position: 0;
+    }
+}
+
+.full-card__text {
+    font-family: "Golos";
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.card-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 340px;
+    height: 241px;
+    border-radius: 0 0 10px 10px;
+    background-color: #254595;
+    padding: 30px 20px 20px 20px;
+    position: relative;
+    
+    @include for-tablet-up {
+        border-radius: 0 10px 10px 0;
+        width: 482px;
+        height: 317px;
+    }
+    
+    @include for-desktop-up {
+        border-radius: 0 10px 10px 0;
+        width: 400px;
+        height: 250px;
+        padding: 30px 20px 20px 40px;
+    }
+}
+
+.title {
+    @include for-tablet-up {
+        font-size: 36px;
+    }
+    
+    @include for-desktop-up {
+        font-size: 36px;
+    }
+}
+
+.icon-close {
+    display: flex;
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon__img {
+    width: 15px;
+    height: 15px;
+}
+
+
+.card-about__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 132px;
+    border-radius: 8px;
+    font-family: "Golos";
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    margin-top: 20px;
+    text-decoration: none;
+    :hover {
+        background-color: #0047FE;
+        border: none;
+    }
+    @include for-tablet-up {
+        margin-top: 94px;
+    }
+    @include for-desktop-up {
+        margin-top: 14px;
+    }
+}
+
+.card-about__button:hover {
+    background-color: #0047FE;
+    border: none;
+}
+
+.container__cards-flex {
+    display: flex;
+    width: 352px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.card {
+    width: 158px;
+    height: 230px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-size: cover;
+    position: relative;
+    @include for-tablet-up {
+        width: 216px;
+        height: 317px;
+        background-size: cover;
+    }
+    
+    @include for-desktop-up {
+        background-size: cover;
+        width: 170px;
+        height: 250px;
+    }
+}
+
+.image {
+    width: 158px;
+    height: 230px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    @include for-tablet-up {
+        width: 216px;
+        height: 317px;
+    }
+    
+    @include for-desktop-up {
+        width: 170px;
+        height: 250px;
+    }
+}
+
+.card__country {
+    font-family: "Golos";
+    font-family: 400;
+    font-size: 16px;
+    color:#ffffff;
+    z-index: 3;
+    @include for-tablet-up {
+        z-index: auto;
+    }
+}
+
+.city {
+    font-family: "Golos";
+    font-weight: 600;
+}
+
+.disposition_absolute {
+    font-family: "Golos";
+    font-family: 400;
+    font-size: 16px;
+    color:#ffffff;
+    z-index: 3;
+    left: 12px;
+    bottom: 258px;
+    position: absolute;
+    
+    @include for-tablet-up {
+        bottom: 17px;
+    }
+}
+
+.current__city {
+    font-family: "Golos";
+    font-weight: 600;
+    bottom: 279px;
+    @include for-tablet-up {
+        bottom: 38px;
+    }
+}
+
+.swiper-container {
+    width: 345px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 485px;
+    @include for-tablet-up {
+        width: 702px;
+        height: 670px;
+    }
+    @include for-desktop-up {
+        width: 1170px  !important;
+        height: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+        
+}
+
+.pagination {
+    position: static !important;
+    margin-top: 10px;
+}
+
+.swiper-pagination-bullet {
+    margin-left: 10px;
+    opacity: 1 !important;
+    background-color: #ffffff !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #0047FF !important;
+}
+
+.container__content {
+    @include for-tablet-up {
+        margin: 30px 20px;
+    }
+    @include for-desktop-up {
+        width: 100%;
+        margin: 36px 20px;
+    }
+}
+
+.swiper-button-next {
+    @include for-tablet-up {
+        display: none;
+    }
+    @include for-desktop-up {
+        display: flex !important;
+        color: #ffffff !important;
+        cursor: pointer !important;
+        top: 57% !important;
+        width: 65px !important;
+        height: 65px !important;
+        border-radius: 50%;
+        :hover {
+            background-color: #0047FE;
+        }
+    }
+}
+    
+.swiper-button-prev {
+    @include for-tablet-up {
+        display: none;
+    }
+    
+    @include for-desktop-up {
+        display: flex !important;
+        color: #ffffff !important;
+        cursor: pointer !important;
+        top: 57% !important;
+        width: 65px !important;
+        height: 65px !important;
+        border-radius: 50%;
+        :hover {
+            background-color: #0047FE;
+        }
+    }
+}
+
+.border_left {
+    @include for-desktop-up {
+        border-radius: 10px 0 0 10px;
+    }
+}
+
+.reverse_side {
+    @include for-desktop-up {
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+.card-container {
+    @include for-desktop-up {
+        position: relative;
+    }
+}
+
+.pagination {
+    @include for-desktop-up {
+        display: none !important;
+    }
+}

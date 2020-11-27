@@ -1,0 +1,36 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #4F73CD;
+}
+
+.container {
+    display: flex;
+    background-color: #4F73CD;
+    height: 100%;
+}
+
+.card-container {
+    display: flex;
+    cursor: pointer;
+}
+
+.container__content {
+    display: flex;
+    width: 95%;
+    height: 90%;
+    margin: 36px 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: "Golos";
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}

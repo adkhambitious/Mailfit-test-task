@@ -1,0 +1,145 @@
+@import "/media-query-mixins.scss";
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    width: 334px;
+    height: auto;
+    background-color: transparent;
+    position: relative;
+    color: #ffffff;
+
+    @include for-tablet-up {
+        display: flex;
+        width: 689px;
+    }
+
+    @include for-desktop-up {
+        position: static;
+        width: 1170px;
+    }
+}
+
+.dropdown__name {
+    display: flex;
+    align-items: center;
+    font-family: "Golos";
+    font-weight: 500;
+    font-size: 16px;
+    height: 39px;
+    position: relative;
+    cursor: pointer;
+    @include for-tablet-up {
+        display: none;
+    }
+}
+
+.dropdown__name::after {
+    content: '';
+	top: 50%;
+	right: 15px;
+}
+
+.dropdown__list {
+    display: none;
+	width: 100%;
+	height: auto;
+	left: 0px;
+	border-top: none;
+	background: #254595;
+    user-select: none;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 30px;
+    
+    @include for-tablet-up {
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    
+    @include for-desktop-up {
+        width: 100%;
+    }
+}
+
+.dropdown_open .dropdown__list {
+    display: block;
+    transition: all 0.6s ease 0s;
+}
+
+.dropdown_open .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.arrow-icon {
+    display: block;
+    right: 0;
+    position: absolute;
+    margin: 10px;
+    @include for-tablet-up {
+        display: none;
+    }
+}
+
+.arrow-icon_clicked {
+    display: block;
+    
+    @include for-tablet-up {
+        display: none;
+    }
+}
+
+
+
+.dropdown__item {
+    display: flex;
+    list-style: none;
+    font-family: "Golos";
+    font-weight: 500;
+    font-size: 16px;
+    height: 39px;
+    color: #ffffff;
+    align-items: center;
+    padding-left: 41px;
+    cursor: pointer;
+    @include for-tablet-up {
+        justify-content: center;
+        padding: 0;
+        width: 131px;
+        border-radius: 10px;
+    }
+}
+
+.dropdown__item:hover {
+    background-color: #3259B9;
+    @include for-tablet-up {
+        background-color: #80A0F2;
+    }
+    @include for-desktop-up {
+        background-color: #80A0F2;
+    }
+}
+
+.dropdown__item_clicked {
+    background-color: #3259B9;
+    @include for-tablet-up {
+        background: #80A0F2;
+    }
+}
+
+.dropdown__item_clicked .tick {
+    display: flex;
+    @include for-tablet-up {
+        display: none;
+    }
+}
+
+.tick {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    margin: 0 8px 0 8px;
+    left: 0;
+    display: none;
+}

@@ -1,5 +1,5 @@
 import closeSvg from './icons/close.svg';
-import { travels } from './travels';
+import { travels } from '../travels';
 import { createNewElement } from './createNewElement';
 
 const createFullCard = (cityName, countryName, description, imagePath, shiftValue, order) => createNewElement(`

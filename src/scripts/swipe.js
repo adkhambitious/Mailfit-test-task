@@ -1,6 +1,6 @@
-import { travels } from '../travels';
-import { createSlide } from '../elements/createSlide';
-import { initSlidesEventListeners } from '../elements/cardInformation';
+import { travels } from './travels';
+import { createSlide } from './elements/createSlide';
+import { initSlidesEventListeners } from './elements/cardInformation';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import "swiper/swiper-bundle.css";
 

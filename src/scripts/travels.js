@@ -1,19 +1,19 @@
-import milanPath from './images/milan.png';
-import berlinPath from './images/berlin.png';
-import venicePath from './images/venice.png';
-import vicenzePath from './images/vicenze.png';
-import barcelonaPath from './images/barcelona.png';
-import madridPath from './images/madrid.png';
-import fraiburgPath from './images/fraiburg.png';
-import kashPath from './images/kash.png';
-import antaliyaPath from './images/antaliya.jpg';
-import athensPath from './images/athens.png';
-import portuPath from './images/portu.png';
-import lissbonPath from './images/lissbon.png';
+import milanPath from '/images/milan.png';
+import berlinPath from '/images/berlin.png';
+import venicePath from '/images/venice.png';
+import vicenzePath from '/images/vicenze.png';
+import barcelonaPath from '/images/barcelona.png';
+import madridPath from '/images/madrid.png';
+import fraiburgPath from '/images/fraiburg.png';
+import kashPath from '/images/kash.png';
+import antaliyaPath from '/images/antaliya.jpg';
+import athensPath from '/images/athens.png';
+import portuPath from '/images/portu.png';
+import lissbonPath from '/images/lissbon.png';
 
-import tokioPath from './images/tokio.jpg';
-import miamiPath from './images/miami.jpg';
-import kazanPath from './images/kazan.jpg';
+import tokioPath from '/images/tokio.jpg';
+import miamiPath from '/images/miami.jpg';
+import kazanPath from '/images/kazan.jpg';
 
 
 const travels = {

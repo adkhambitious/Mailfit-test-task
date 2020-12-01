@@ -1,4 +1,4 @@
-import closeSvg from './icons/close.svg';
+import closeSvg from '/icons/close.svg';
 import { travels } from '../travels';
 import { createNewElement } from './createNewElement';
 

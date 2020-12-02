@@ -222,7 +222,7 @@
     font-family: 400;
     font-size: 16px;
     color:#ffffff;
-    z-index: 3;
+    z-index: 3 !important;
     @include for-tablet-up {
         z-index: auto;
     }
@@ -312,9 +312,9 @@
         width: 65px !important;
         height: 65px !important;
         border-radius: 50%;
-        :hover {
+        .swiper-button-next:hover {
             background-color: #0047FE;
-        }
+        }    
     }
 }
     
@@ -331,7 +331,7 @@
         width: 65px !important;
         height: 65px !important;
         border-radius: 50%;
-        :hover {
+        .swiper-button-next:hover {
             background-color: #0047FE;
         }
     }

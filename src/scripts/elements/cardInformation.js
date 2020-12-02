@@ -12,7 +12,7 @@ const createFullCard = (cityName, countryName, description, imagePath, shiftValu
                 ${description}
             </p>
             <a class="card-about__button" href="#">Подробнее</a>
-            <button class="closeIcon"><img class="icon__img" src="${closeSvg}"></button>
+            <button class="icon-close"><img class="icon__img" src="${closeSvg}"></button>
         </div>
     </div>
 `);
@@ -53,7 +53,7 @@ const initSlidesEventListeners = () => {
             previousFullCard = fullCountryCard;
 
             const closeIcon = fullCountryCard.querySelector(".icon-close");
-            closeIcon.addEventListener("click", event => {
+            closeIcon.addEventListener("click", () => {
                 countryCardContainer.removeChild(fullCountryCard);
             })
         })
